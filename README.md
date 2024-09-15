@@ -18,8 +18,6 @@ Este projeto é uma API desenvolvida com Express.js e PostgreSQL. Ele permite re
 - ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white): Ferramenta para testar APIs.
 - ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white): Plataforma para criar e gerenciar contêineres.
 
-## Configuração e Execução
-
 ### Com Docker
 
 1. **Clone o repositório:**

@@ -8,7 +8,7 @@ const client = new Client({
     password: 'batatinha',
     host: 'localhost',
     port: 5432,
-  })
+  });
 
 client.connect()
 
@@ -30,14 +30,21 @@ app.get('/pessoas' , function (req, res){
     res.json(pessoas)
 })
   app.get('/pessoa' , function (req, res){
-    const index = 19
+
+
+    /* client.query('SELECT * FROM pessoas',(error, dbres) => {
+        res.json(dbres.rows)
+       
+      }); */  //retorna tabela completa do banco
+
+    const index = 53
 
     client.query('SELECT * FROM pessoas WHERE id = $1', [index], (error, dbres) => {
         res.json(dbres.rows[0])
         
-      })
+      });
 
-  })
+  });
 
 app.post('/pessoa', function(req, res){
     console.log(req.body)
@@ -50,7 +57,7 @@ app.post('/pessoa', function(req, res){
         res.json(dbres.rows[0])
     }    
     )
-})
+});
 
 
 app.patch('/pessoa/aniversario', (req, res)=>{
@@ -58,5 +65,5 @@ app.patch('/pessoa/aniversario', (req, res)=>{
         pessoas[batatinha].idade = pessoas[batatinha].idade + 1
     }
     res.json(pessoas)
-})
+});
 app.listen(3000)
